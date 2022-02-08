@@ -40,7 +40,7 @@ int Is_state_of_charge_not_safe(float chargeRate) {
 }
 int batteryIsOk(float temperature, float soc, float chargeRate) {
   
-  return ( (Is_Temperature_safe(temperature))(Is_state_of_charge_not_safe( soc))(Is_state_of_charge_not_safe( chargeRate)))
+  return ( (Is_Temperature_safe(temperature))(Is_state_of_charge_not_safe( soc))(Is_state_of_charge_not_safe( chargeRate)));
 }
 
 int main() {
