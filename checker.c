@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include "Parameters.h"
 
 #define MINIMUM_TEMPERATURE    0.0
 #define MAXIMUM_TEMPERATURE    45.0
