@@ -43,7 +43,7 @@ int main() {
    
   assert(batteryIsOk(25, 70, 0.7));
   assert(!batteryIsOk(50, 85, 0));
-  assert(batteryIsOk(45, 80, 0.8));
+  assert(!batteryIsOk(45, 80, 0.8));
   assert(!batteryIsOk(45, 80, 0.9));
   assert(!batteryIsOk(60, 90, 0.9));
 	
