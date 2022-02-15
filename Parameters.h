@@ -6,7 +6,7 @@
 #define MAXIMUM_CHARGERATE    0.8
 
 #define English 1
-#define German 2
+#define German 0
 #define Language English
 
 
