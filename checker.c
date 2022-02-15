@@ -16,12 +16,12 @@ int Is_Temperature_safe(float temperature) {
   } 
   else
   {	  
-  check_warning_tolerance_approching_discharge(temperature);
-  check_warning_tolerance_approching_charge_Peak_(temperature);
+  check_warning_tolerance_approching_low_temp(temperature);
+  check_warning_tolerance_approching_high_temp(temperature);
   return 1;  
   }
 }
-void check_warning_tolerance_approching_discharge(float temperature)
+void check_warning_tolerance_approching_low_temp(float temperature)
 {
 	
    if(temperature>= MINIMUM_TEMPERATURE || temperature <=Discharge_Approach_limit)
@@ -30,7 +30,7 @@ void check_warning_tolerance_approching_discharge(float temperature)
   }
   
 }
-void check_warning_tolerance_approching_charge_Peak_(float temperature)
+void check_warning_tolerance_approching_high_temp(float temperature)
 {
 	
    if(temperature >= Charge_Peak_limit  || temperature <= MAXIMUM_TEMPERATURE    )
