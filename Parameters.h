@@ -11,3 +11,6 @@
 
 #define Temperature_approaching_low_limit (MINIMUM_TEMPERATURE + ( 0.05* MINIMUM_TEMPERATURE))
 #define Temperature_approaching_high_limit (MAXIMUM_TEMPERATURE - ( 0.05* MAXIMUM_TEMPERATURE))
+
+#define CHARGERATE_approaching_low_limit (MINIMUM_CHARGERATE + ( 0.05* MINIMUM_CHARGERATE))
+#define CHARGERATE_approaching_high_limit (MAXIMUM_CHARGERATE - ( 0.05* MAXIMUM_CHARGERATE))
