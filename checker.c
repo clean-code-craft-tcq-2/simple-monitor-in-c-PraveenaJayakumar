@@ -24,7 +24,7 @@ int Is_Temperature_safe(float temperature) {
 void check_warning_tolerance_approching_low_temp(float temperature)
 {
 	
-   if(temperature>= MINIMUM_TEMPERATURE || temperature <=Discharge_Approach_limit)
+   if(temperature>= MINIMUM_TEMPERATURE || temperature <=Temperature_approaching_low_limit )
   {
     display("LOW_temperature_WARNING\n");
   }
@@ -33,7 +33,7 @@ void check_warning_tolerance_approching_low_temp(float temperature)
 void check_warning_tolerance_approching_high_temp(float temperature)
 {
 	
-   if(temperature >= Charge_Peak_limit  || temperature <= MAXIMUM_TEMPERATURE    )
+   if(temperature >= Temperature_approaching_high_limit   || temperature <= MAXIMUM_TEMPERATURE    )
   {
     display("HIGH_temperature_WARNING\n");
   }
@@ -67,7 +67,7 @@ int Is_state_of_charge_not_safe(float soc) {
 void check_warning_tolerance_approching_discharge(float soc)
 {
 	
-   if(soc>= MINIMUM_SOC || soc <=Discharge_Approach_limit)
+   if(soc>= MINIMUM_SOC || soc <=Charge_Discharge_Approach_limit)
   {
     display("LOW_SOC_WARNING\n");
   }
@@ -76,7 +76,7 @@ void check_warning_tolerance_approching_discharge(float soc)
 void check_warning_tolerance_approching_charge_Peak_(float soc)
 {
 	
-   if(soc >= Charge_Peak_limit  || soc <= MAXIMUM_SOC    )
+   if(soc >= Charge_Peak_limit   || soc <= MAXIMUM_SOC    )
   {
     display("HIGH_SOC_WARNING\n");
   }
