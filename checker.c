@@ -13,13 +13,20 @@ int Is_Temperature_safe(float temperature) {
     display("Temperature out of range!\n");
     return 0;
   }   
-  warning_tolerance_check(temperature);	
+  check_warning_tolerance_approching_discharge(temperature);
+  check_warning_tolerance_approching_charge_Peak_(temperature);
   return 1;
 }
-void warning_tolerance_check(float temperature){
+void check_warning_tolerance_approching_discharge(float temperature){
 if(temperature>= MINIMUM_TEMPERATURE || temperature <=Discharge_Approach_limit)
   {
-    display("Warning: Approaching discharge\n");
+    display("LOW_SOC_WARNING\n");
+  }
+}
+void check_warning_tolerance_approching_charge_Peak_(float temperature){
+if(temperature>= Charge_Peak_limit  || temperature <=MAXIMUM_TEMPERATURE)
+  {
+    display("HIGH_SOC_WARNING\n");
   }
 }
 
