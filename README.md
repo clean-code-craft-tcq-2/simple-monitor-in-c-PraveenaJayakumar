@@ -33,7 +33,10 @@ We will explore the charging phase of Li-ion batteries to start with.
 1. Separate pure functions from I/O
 1. Avoid duplication - functions that do nearly the same thing
 1. Complete the tests - cover all conditions.
-1. To take effective action, we need to know
+
+
+Extension 1 and 3
+3. To take effective action, we need to know
 the abnormal measure and the breach -
 whether high or low. Add this capability.
 
