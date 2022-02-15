@@ -26,7 +26,7 @@ void check_warning_tolerance_approching_low_temp(float temperature)
 	
    if(temperature>= MINIMUM_TEMPERATURE || temperature <=Temperature_approaching_low_limit )
   {
-    display("LOW_temperature_WARNING\n");
+    Language?display("LOW_temperature_WARNING\n"):display("NIEDRIGE_Temperatur_WARNUNG \n");
   }
   
 }
