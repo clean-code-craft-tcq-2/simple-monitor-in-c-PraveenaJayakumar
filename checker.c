@@ -97,11 +97,46 @@ void Check_low_or_high_soc_breach(float soc)
 
 int Is_chargerate_out_of_range(float chargeRate) {
 	
-  if(chargeRate > MAXIMUM_CHARGERATE) {
-    display("Charge Rate out of range!\n");
-    return 0;
+  if(chargeRate < MINIMUM_CHARGERATE || chargeRate > MAXIMUM_CHARGERATE    ) 
+  { 
+   Check_low_or_high_chargeRate_breach(chargeRate);
+   return 0;   
+  } 
+  else
+  {	  
+  check_warning_tolerance_approching_low_charge_rate(chargeRate);
+  check_warning_tolerance_approching_high_charge_rate(chargeRate);
+  return 1;  
   }
-  return 1;
+}
+void check_warning_tolerance_approching_low_charge_rate(float chargeRate)
+{
+	
+   if(chargeRate>= MINIMUM_CHARGERATE || chargeRate <= ChargeRate_approaching_low_limit )
+  {
+    display("LOW_chargeRate_WARNING\n");
+  }
+  
+}
+void check_warning_tolerance_approching_high_charge_rate(float chargeRate)
+{
+	
+   if(chargeRate >= ChargeRate_approaching_high_limit   || chargeRate <= MAXIMUM_CHARGERATE    )
+  {
+    display("HIGH_chargeRate_WARNING\n");
+  }
+  
+}
+void Check_low_or_high_chargeRate_breach(float chargeRate)
+{
+	 if(chargeRate < MINIMUM_CHARGERATE)
+    {
+	  display("LOW_chargeRate_BREACH!\n");
+    }
+    else
+    {
+	   display("HIGH_chargeRate_BREACH!\n"); 
+    }
 }
 int batteryIsOk(float temperature, float soc, float chargeRate) {
   
