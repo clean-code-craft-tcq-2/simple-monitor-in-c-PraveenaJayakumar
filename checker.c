@@ -12,12 +12,15 @@ int Is_Temperature_safe(float temperature) {
   if(temperature < MINIMUM_TEMPERATURE || temperature > MAXIMUM_TEMPERATURE) {
     display("Temperature out of range!\n");
     return 0;
-  } 
-  if(temperature>= MINIMUM_TEMPERATURE || temperature <=Discharge_Approach_limit)
+  }   
+  warning_tolerance_check(temperature);	
+  return 1;
+}
+void warning_tolerance_check(float temperature){
+if(temperature>= MINIMUM_TEMPERATURE || temperature <=Discharge_Approach_limit)
   {
     display("Warning: Approaching discharge\n");
   }
-  return 1;
 }
 
 int Is_state_of_charge_not_safe(float soc) {
