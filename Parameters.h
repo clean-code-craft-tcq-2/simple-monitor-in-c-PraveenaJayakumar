@@ -5,6 +5,11 @@
 #define MINIMUM_CHARGERATE    0
 #define MAXIMUM_CHARGERATE    0.8
 
+#define English 1
+#define German 2
+#define Language English
+
+
 
 #define Charge_Discharge_Approach_limit (MINIMUM_SOC + ( 0.05* MINIMUM_SOC))
 #define Charge_Peak_limit (MAXIMUM_SOC - ( 0.05* MAXIMUM_SOC))
