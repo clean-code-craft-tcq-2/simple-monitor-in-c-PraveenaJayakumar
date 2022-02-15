@@ -6,5 +6,8 @@
 #define MAXIMUM_CHARGERATE    0.8
 
 
-#define Discharge_Approach_limit (MINIMUM_SOC + ( 0.05* MINIMUM_SOC))
+#define Charge_Discharge_Approach_limit (MINIMUM_SOC + ( 0.05* MINIMUM_SOC))
 #define Charge_Peak_limit (MAXIMUM_SOC - ( 0.05* MAXIMUM_SOC))
+
+#define Temperature_approaching_low_limit (MINIMUM_TEMPERATURE + ( 0.05* MINIMUM_TEMPERATURE))
+#define Temperature_approaching_high_limit (MAXIMUM_TEMPERATURE - ( 0.05* MAXIMUM_TEMPERATURE))
