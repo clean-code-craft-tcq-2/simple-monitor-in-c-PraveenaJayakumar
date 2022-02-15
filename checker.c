@@ -19,18 +19,14 @@ int Is_state_of_charge_not_safe(float soc) {
 	
   if(soc < MINIMUM_SOC || soc > MAXIMUM_SOC    ) 
   { 
-
    Check_low_or_high_soc_breach(soc);
-   return 0;
-   
+   return 0;   
   } 
   else
-  {
-	  
+  {	  
   check_warning_tolerance_approching_discharge(soc);
   check_warning_tolerance_approching_charge_Peak_(soc);
-  return 1;
-  
+  return 1;  
   }
 }
 void check_warning_tolerance_approching_discharge(float soc)
