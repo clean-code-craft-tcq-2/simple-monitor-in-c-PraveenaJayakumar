@@ -9,11 +9,46 @@ void display(char *stringsToBeDisplayed) {
 }
 int Is_Temperature_safe(float temperature) {
 	
-  if(temperature < MINIMUM_TEMPERATURE || temperature > MAXIMUM_TEMPERATURE) {
-    display("Temperature out of range!\n");
-    return 0;
+  if(temperature < MINIMUM_TEMPERATURE || temperature > MAXIMUM_TEMPERATURE    ) 
+  { 
+   Check_low_or_high_temperature_breach(temperature);
+   return 0;   
   } 
-  return 1;
+  else
+  {	  
+  check_warning_tolerance_approching_discharge(temperature);
+  check_warning_tolerance_approching_charge_Peak_(temperature);
+  return 1;  
+  }
+}
+void check_warning_tolerance_approching_discharge(float temperature)
+{
+	
+   if(temperature>= MINIMUM_TEMPERATURE || temperature <=Discharge_Approach_limit)
+  {
+    display("LOW_temperature_WARNING\n");
+  }
+  
+}
+void check_warning_tolerance_approching_charge_Peak_(float temperature)
+{
+	
+   if(temperature >= Charge_Peak_limit  || temperature <= MAXIMUM_TEMPERATURE    )
+  {
+    display("HIGH_temperature_WARNING\n");
+  }
+  
+}
+void Check_low_or_high_temperature_breach(float temperature)
+{
+	 if(temperature < MINIMUM_TEMPERATURE)
+    {
+	  display("LOW_temperature_BREACH!\n");
+    }
+    else
+    {
+	   display("HIGH_temperature_BREACH!\n"); 
+    }
 }
 int Is_state_of_charge_not_safe(float soc) {
 	
