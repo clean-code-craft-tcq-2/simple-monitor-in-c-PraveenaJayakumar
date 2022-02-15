@@ -13,6 +13,10 @@ int Is_Temperature_safe(float temperature) {
     display("Temperature out of range!\n");
     return 0;
   } 
+  if(temperature>= MINIMUM_TEMPERATURE || temperature <=Discharge_Approach_limit)
+  {
+    display("Warning: Approaching discharge\n");
+  }
   return 1;
 }
 
