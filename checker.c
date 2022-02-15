@@ -10,7 +10,15 @@ void display(char *stringsToBeDisplayed) {
 int Is_Temperature_safe(float temperature) {
 	
   if(temperature < MINIMUM_TEMPERATURE || temperature > MAXIMUM_TEMPERATURE) {
-    display("Temperature out of range!\n");
+    if(temperature < MINIMUM_TEMPERATURE)
+    {
+	  display("LOW_SOC_BREACH!\n");
+    }
+    else
+    {
+	   display("HIGH_SOC_BREACH!\n"); 
+    }
+	    
     return 0;
   }   
   check_warning_tolerance_approching_discharge(temperature);
