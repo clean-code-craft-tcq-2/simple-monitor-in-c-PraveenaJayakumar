@@ -20,7 +20,7 @@ int Is_state_of_charge_not_safe(float soc) {
   if(soc < MINIMUM_SOC || soc > MAXIMUM_SOC    ) 
   { 
 
-   Check_low_or_high_soc_breach(temperature);
+   Check_low_or_high_soc_breach(soc);
    return 0;
    
   } 
